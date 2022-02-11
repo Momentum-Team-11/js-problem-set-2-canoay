@@ -6,17 +6,64 @@
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
+function remove(names, removedName) {
+    for (let i = 0; i < names.length; i++) {
+        let idx = names.indexOf(removedName);
+        if (i === idx) {
+           names.splice(idx, 1);
+        }
+    }
+    return names;
+}
+
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
+
+function remove2(names, removedName) {
+    let newNames = []
+    for (let student of names) {
+        if (student !== removedName) {
+            //if name is not the name to remove, add name
+           newNames.push(student);
+        } 
+    }
+    return newNames;
+}
+
 
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(array) {
+    let sumOfNumbers = 0
+    for (let number of array) {
+        sumOfNumbers += number
+    }
+return sumOfNumbers
+}
+
+
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+function average(array) {
+    if (array.length > 0) {
+        return (sum(array) / array.length) 
+    }
+}
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+function minimum(array) {
+    let minNumber = array[0]
+    if (array.length > 0) {
+        for (let number of array) {
+            if (number < minNumber) {
+                minNumber = number
+            }
+        } 
+    } 
+    return minNumber
+}
 
 // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -47,3 +94,4 @@
 //
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Marion"`.
+

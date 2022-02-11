@@ -30,7 +30,7 @@ describe('remove (preserve original array)', function () {
     let array = ['Cadence', 'Ordel', 'Marion']
     assert.deepEqual(
       ['Cadence', 'Ordel'],
-      remove(array, 'Marion')
+      remove2(array, 'Marion')
     )
     assert.deepEqual(['Cadence', 'Ordel', 'Marion'], array)
   })
@@ -39,7 +39,7 @@ describe('remove (preserve original array)', function () {
     let array = ['Cadence', 'Marion', 'Ordel', 'Marion']
     assert.deepEqual(
       ['Cadence', 'Ordel'],
-      remove(array, 'Marion')
+      remove2(array, 'Marion')
     )
 
     assert.deepEqual(['Cadence', 'Marion', 'Ordel', 'Marion'], array)
